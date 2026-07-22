@@ -55,17 +55,17 @@ export function HeroSection({ content, locale, phone }) {
           {content.subtitle}
         </p>
 
-        {/* Figma "Group 2070": two pill buttons, 42.05px tall, border-radius 100.118px (fully rounded), gap ~28px. */}
-        <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-[34px] sm:gap-[28px]">
+        {/* Figma "Group 2070": two pill buttons; on mobile stack full-width for easier taps. */}
+        <div className="mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-[34px] sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-[28px]">
           <a
             href={telHref}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-5 text-[12px] font-bold leading-[19px] text-white transition hover:-translate-y-px hover:bg-white hover:text-[var(--accent)] sm:h-[42px] sm:px-7 sm:text-[13px]"
+            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-5 text-[13px] font-bold leading-[19px] text-white transition hover:-translate-y-px hover:bg-white hover:text-[var(--accent)] sm:h-[42px] sm:min-h-0 sm:w-auto sm:px-7"
           >
             {content.ctaText} →
           </a>
           <a
             href="#services"
-            className="inline-flex h-10 items-center justify-center rounded-full border border-white/60 px-5 text-[12px] font-bold leading-[19px] text-white transition hover:border-white hover:bg-white/10 sm:h-[42px] sm:px-7 sm:text-[13px]"
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/60 px-5 text-[13px] font-bold leading-[19px] text-white transition hover:border-white hover:bg-white/10 sm:h-[42px] sm:min-h-0 sm:w-auto sm:px-7"
           >
             {content.ctaSecondaryText}
           </a>
@@ -93,7 +93,7 @@ export function HeroSection({ content, locale, phone }) {
       {/* Scroll button -Figma Group 2063 / Ellipse 502: 59×59, #FFF; arrow → #DC1F26, rotate 90°. */}
       <a
         href="#specialization"
-        className="scroll-arrow absolute bottom-6 left-1/2 z-20 grid size-11 place-items-center rounded-full bg-white sm:bottom-[48px] sm:size-[59px]"
+        className="scroll-arrow absolute bottom-6 left-1/2 z-20 grid size-12 place-items-center rounded-full bg-white sm:bottom-[48px] sm:size-[59px]"
         aria-label={locale === "ro" ? "Derulați" : "Прокрутить"}
       >
         <FiArrowDown strokeWidth={2.5} className="text-[18px] text-[#DC1F26] sm:text-[23px]" aria-hidden />
