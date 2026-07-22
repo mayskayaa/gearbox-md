@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Bebas_Neue, Inter, Mulish } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import { getSiteLocaleServer } from "@/lib/site-locale";
 
@@ -34,7 +35,10 @@ export default async function RootLayout({ children }) {
       data-scroll-behavior="smooth"
       className={`${mulish.variable} ${inter.variable} ${bebasNeue.variable}`}
     >
-      <body className="bg-white antialiased">{children}</body>
+      <body className="bg-white antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
